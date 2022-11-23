@@ -1,0 +1,25 @@
+# Maintainer: Your Name <filmabemtv2@gmail.com>
+pkgname=fbpinfo
+pkgver=22.11
+pkgrel=1
+pkgdesc="A Simple fork from pfetch still work in progress to be shipped with FBP OS"
+arch=('x86_64')
+url="https://github.com/FilmaBem2/fbpinfo"
+license=('MIT')
+depends=()
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=('fbpinfo' 'fbpfetch')
+conflicts=('pfetch' 'neofetch')
+replaces=('pfetch' 'neofetch')
+backup=()
+options=()
+source=("https://github.com/FilmaBem2/fbpinfo/archive/refs/heads/master.zip")
+noextract=()
+sha256sums=('4b0d9731fedf1dc4faf8aa494e8c1f373bcdc8e1ab7004a0f3a508b74e92730b')
+
+package() {
+	cd "fbpinfo-master"
+	install -Dm 755 "$srcdir/fbpinfo-master/fbpfetch" "$pkgdir/usr/share/fbpfetch"
+}
