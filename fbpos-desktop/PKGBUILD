@@ -1,0 +1,33 @@
+# Maintainer: Filma Bem <filmabemtv2@gmail.com>
+pkgname=fbpos-desktop
+pkgver=22.10.12
+pkgrel=1
+pkgdesc="Add FBP OS Logo to the system info and add some files to binary folder. Also make sure to nothing basic is missing"
+arch=('x86_64')
+url=""
+license=('MIT')
+groups=()
+depends=('base' 'pacman-contrib' 'yay' 'git' 'xdg-desktop-portal' 'sddm')
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=('fbpos-desktop')
+conflicts=('fbpos-desktop')
+replaces=('fbpos-desktop')
+backup=()
+options=()
+install=fbpos-desktop.install
+changelog=
+source=("$pkgname.tar.gz")
+sha256sums=('4e4b7b3dfe8027d0510e059a1bd0a1e909d5cefa31c2ff1205cf05ccacd922ea')
+
+package() {
+	install -Dm 755 "${srcdir}/apt" "${pkgdir}/usr/bin/apt"
+	install -Dm 755 "${srcdir}/apt" "${pkgdir}/usr/bin/apt-get"
+	install -Dm 755 "${srcdir}/dnf" "${pkgdir}/usr/bin/dnf"
+	install -Dm 755 "${srcdir}/pam_environment" "${pkgdir}/etc/skel/.pam_environment"
+	install -Dm 755 "${srcdir}/envvars.conf" "${pkgdir}/etc/skel/.config/environment.d/envvars.conf"
+	install -Dm 755 "${srcdir}/update-grub" "${pkgdir}/usr/bin/update-grub"
+	install -Dm 644 "${srcdir}/fbpos-logo.png" "${pkgdir}/usr/share/pixmaps/fbpos-logo.png"
+	install -Dm 644 "${srcdir}/fbpos-logo.png" "${pkgdir}/usr/share/icons/fbpos-logo.png"
+}

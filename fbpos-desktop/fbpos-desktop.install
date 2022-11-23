@@ -1,0 +1,12 @@
+
+post_install() {
+    sed -i -e 's/NAME="Arch Linux"/NAME="FBP OS"/g' /etc/os-release
+    sed -i -e 's/PRETTY_NAME="Arch Linux"/PRETTY_NAME="FBP OS"/g' /etc/os-release
+    sed -i -e 's/ID=arch/ID=fbpos/g' /etc/os-release
+    sed -i -e's/LOGO=archlinux-logo/LOGO=fbpos-logo/g' /etc/os-release
+    echo "Installed Sucessfully"
+}
+
+post_upgrade() {
+    post_install
+}

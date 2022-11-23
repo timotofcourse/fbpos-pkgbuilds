@@ -1,0 +1,27 @@
+# Maintainer: Filma Bem <filmabemtv2@gmail.com>
+
+pkgname=fbpos-welcome-qt
+pkgver=23
+pkgrel=2
+pkgdesc="Welcome tool for FBP OS. This tool helps new users to do basic tasks like install an office suite or some game laucnher, install other software, manage backups and configure the system"
+arch=('x86_64')
+url=""
+license=('MIT')
+groups=()
+depends=('pacman' 'yay' 'python-pip' 'zenity' 'fbpos-desktop')
+makedepends=('git')
+optdepends=()
+provides=('fbpos-welcome')
+conflicts=('fbpos-welcome' 'fbpos-welcome-gtk')
+backup=()
+options=()
+install=python-modules
+source=("$pkgname-$pkgver.tar.gz")
+noextract=()
+sha256sums=('4c3997127f57a815c0e79506170378823717930622e169475dccc0a061dc8895')
+
+package() {
+	install -Dm 755 "$srcdir/$pkgname-$pkgver.py" "$pkgdir/usr/bin/$pkgname"
+	install -Dm 644 "$srcdir/$pkgname.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"
+	install -Dm 755 "$srcdir/fbpos-welcome.ui" "$pkgdir/usr/share/fbpos-welcome/fbpos-welcome.ui"
+}
