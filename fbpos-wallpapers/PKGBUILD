@@ -1,0 +1,61 @@
+# Maintainer: Filma Bem <filmabemtv2@gmail.com>
+pkgname=fbpos-wallpapers
+pkgver=23
+pkgrel=1
+epoch=
+pkgdesc="FBP Wallpapers for FBP OS."
+arch=('x86_64')
+url="https://github.com/FilmaBem2/pkgbulds"
+license=('MIT')
+groups=()
+depends=()
+makedepends=(git)
+checkdepends=()
+optdepends=()
+provides=(fbpos-wallpapers)
+conflicts=()
+replaces=()
+backup=()
+options=()
+changelog=
+source=(aurora.jpg
+        aurora-borealis.jpg
+        backlit.jpg
+        backlit-desktop.jpg
+        ballpen-camera.jpg
+        butterfly.jpg
+        california.jpg
+        cats_blue.jpg
+        cave.jpg
+        coffee.jpg
+        crystal.jpg
+        fbpos19.png
+        fbpos21.jpg
+        fbpos22.jpg
+        fbpos23.jpg)
+noextract=()
+sha256sums=('b9ec6d54ebfc153883cbbef6b812f1bf16d60cfaf58288213499f515cde75608'
+            '2be3ed7a391a224ef3770046ffaf71506763d9de472bb7637e44b5937ff37b38'
+            'e3e94796577828acc86b97d90732f5fadfad0e2a3bcf39264c49fbd91fc99fdb'
+            'fc5f2c2dde7c0b0cff1e255b0d26c1f7c4c482b76f7af2ecfc2cfd690d8f4392'
+            '93c12501a6096775f05c1c053f68cf0489d50b42923c0541f2a7933e34576bca'
+            '871fe01aeb06367effc86484bc202fe4f3a9c97e090eb2def231da281a3c1cdf'
+            '019b7a7a6a1fb9b87f660eb0b4d30f83b2aa2383f56cfea93df76dfe3e3e0a30'
+            '8e04eb3fead4bb6a20cf06ae0dd9695440784366d7f36edc66cfa5955c7c0e6b'
+            '55eeb8a325a8af0ac5afa2c6e2ef35f1c6ab294cd3f367745f92850d4b4baba0'
+            '5de7207e7b8a60fe353b22274b5f758b5de0a4568007283d33826c317f4c017b'
+            '49060d5a2fb5dc9216a8a1db94de7fcba21fbe5f6513012b56a75c498fb16aff'
+            '4ee33420ef579f9f61bd75ac55b50c567a3532f7eb05c9652ab67d0d718102ae'
+            'd78986857ca38d49171742b302af6228ca252b3c1ce79195db5a4ef5492bc30c'
+            '68ab3c04e870368592d12f68282851a27d98f6a29fb27f1ebba09e040f6fa467'
+            '0d23c76b59643a282e7f85e68e442f54220f4e3ac4c48c1a57a3d128c8f0e0c9')
+validpgpkeys=()
+
+package() {
+    mkdir "${pkgdir}/usr"
+    mkdir "${pkgdir}/usr/share"
+    mkdir "${pkgdir}/usr/share/wallpapers"
+    mv -f "${srcdir}/*.png" "${srcdir}/fbpos/"
+    mv -f "${srcdir}/*.jpg" "${srcdir}/fbpos/"
+    cp -R "${srcdir}/fbpos" "${pkgdir}/usr/share/wallpapers/"
+}
