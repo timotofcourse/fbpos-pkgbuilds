@@ -1,0 +1,32 @@
+# Maintainer: Filma Bem <filmabemtv2@gmail.com>
+
+pkgname=plymouth-theme-fbpos-logo
+pkgver=23.0
+pkgrel=1
+pkgdesc='A remake of the ubuntu-logo Plymouth theme, based on the debian-logo theme, but featuring the FBP OS logo.'
+arch=('any')
+url='https://www.gnome-look.org/content/show.php/Arch-logo+plymouth?content=141697'
+license=('GPL')
+depends=('plymouth')
+install="${pkgname}.install"
+source=(
+	'plymouth-theme-arch-logo.tar.gz'
+)
+sha256sums=(
+	'553ab3efd51abefc50c10b521c24183df9ef879d080a75c54fb1c1512fbc94e6'
+)
+
+package() {
+	mv "${srcdir}/arch-logo" "${srcdir}/fbpos-logo"
+	cd "${srcdir}/fbpos-logo"
+	rm -fv *~
+	mkdir -p "${pkgdir}/usr/share/plymouth/themes/fbpos-logo"
+	mv "${srcdir}/arch-logo.png" "${srcdir}/fbpos-logo.png"
+	mv "${srcdir}/fbpos-logo/arch-logo.plymouth" "${srcdir}/fbpos-logo/fbpos-logo.plymouth"
+	mv "${srcdir}/fbpos-logo/arch-logo.script" "${srcdir}/fbpos-logo/fbpos-logo.script"
+	mv "${srcdir}/fbpos-logo/arch_logo.png" "${srcdir}/fbpos-logo/fbpos_logo.png"
+	sed -i 's/arch_logo/fbpos_logo/g' "${srcdir}/fbpos-logo/fbpos-logo.script"
+	sed -i 's/arch-logo/fbpos-logo/g' "${srcdir}/fbpos-logo/fbpos-logo.plymouth"
+	sed -i 's/Arch Logo/FBP OS logo/g' "${srcdir}/fbpos-logo/fbpos-logo.plymouth"
+	install -Dvm644 * "${pkgdir}/usr/share/plymouth/themes/fbpos-logo"
+}
