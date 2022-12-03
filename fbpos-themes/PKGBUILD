@@ -1,0 +1,24 @@
+# Maintainer: Filma Bem <filmabemtv2@gmail.com>
+
+pkgname=fbpos-themes
+pkgver=23.0
+pkgrel=1
+pkgdesc="Meta Package to install FBP OS Themes"
+arch=('x86_64')
+url="https://github.com/FilmaBem2/fbpos-pkgbuilds"
+license=('MIT')
+depends=('plymouth-theme-fbpos-logo' 'materia-gtk-theme' 'materia-kde' 'papirus-icon-theme')
+makedepends=('git')
+checkdepends=()
+optdepends=()
+provides=('fbpos-themes')
+conflicts=('fbpos-default-themes' 'fbpos-branding')
+replaces=('fbpos-default-themes' 'fbpos-branding')
+options=()
+source=("$pkgname.tar.gz")
+sha256sums=()
+validpgpkeys=()
+
+package() {
+	echo "Themes Installed"
+}
