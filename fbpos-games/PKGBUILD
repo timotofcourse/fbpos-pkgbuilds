@@ -1,0 +1,23 @@
+# Maintainer: Filma Bem <filmabemtv2@gmail.com>
+
+pkgname=fbpos-games
+pkgver=23.0
+pkgrel=1
+pkgdesc="Meta Package to install some game launchers"
+arch=('x86_64')
+url="https://github.com/FilmaBem2/fbpos-pkgbuilds"
+license=('MIT')
+depends=('flatpak' 'steam' 'mangohud' 'goverlay')
+makedepends=('git')
+checkdepends=()
+optdepends=()
+provides=('heroic-games-launcher' 'lutris' 'protonup-qt' 'grapejuice')
+conflicts=('heroic-games-launcher' 'lutris' 'protonup-qt' 'grapejuice')
+replaces=('heroic-games-launcher' 'lutris' 'protonup-qt' 'grapejuice')
+options=()
+install=fbpos-games.install
+validpgpkeys=()
+
+package() {
+	echo installing packages
+}

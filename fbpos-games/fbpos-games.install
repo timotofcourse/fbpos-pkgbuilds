@@ -1,0 +1,13 @@
+
+post_install() {
+	echo "Installing Packages... Please Wait..."
+	flatpak install flathub com.heroicgameslauncher.hgl -y
+	flatpak install flathub net.lutris.Lutris -y
+	flatpak install flathub net.davidotek.pupgui2 -y
+	flatpak install flathub net.brinkervii.grapejuice -y
+	echo "Packages Installed"
+}
+
+post_upgrade() {
+	flatpak update
+}
