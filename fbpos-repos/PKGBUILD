@@ -1,0 +1,57 @@
+# Maintainer: Filma Bem <filmabemtv2@gmail.com>
+pkgname=fbpos-repos
+pkgver=23.0.0
+pkgrel=1
+epoch=
+pkgdesc="FBP OS Repositories"
+packager=('Filma Bem <filmabemtv2@gmail.com>')
+arch=('x86_64')
+url="https://github.com/FilmaBem2/fbpos-repos"
+license=('MIT')
+groups=()
+depends=()
+makedepends=(git)
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+changelog=
+source=(fbpmirrors)
+noextract=()
+sha256sums=('152a06dcc6f05b134081f08d99704159566bec6e078517c57e819f20fa6331ec')
+validpgpkeys=()
+
+pkgver() {
+	cd "${_pkgname}"
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+package() {
+    mkdir "${pkgdir}/etc"
+    mkdir "${pkgdir}/etc/pacman.d"
+    cp -R "${srcdir}/fbpmirrors" "${pkgdir}/etc/pacman.d/"
+    echo "" >> "${pkgdir}/etc/pacman.conf"
+    echo "[fbpos-main]" >> "${pkgdir}/etc/pacman.conf"
+    echo "SigLevel = Optional TrustAll" >> "${pkgdir}/etc/pacman.conf"
+    echo "Include = /etc/pacman.d/fbpmirrors" >> "${pkgdir}/etc/pacman.conf"
+    echo "" >> "${pkgdir}/etc/pacman.conf"
+    echo "[fbpos-themes]" >> "${pkgdir}/etc/pacman.conf"
+    echo "SigLevel = Optional TrustAll" >> "${pkgdir}/etc/pacman.conf"
+    echo "Include = /etc/pacman.d/fbpmirrors" >> "${pkgdir}/etc/pacman.conf"
+    echo "" >> "${pkgdir}/etc/pacman.conf"
+    echo "[fbpos-games]" >> "${pkgdir}/etc/pacman.conf"
+    echo "SigLevel = Optional TrustAll" >> "${pkgdir}/etc/pacman.conf"
+    echo "Include = /etc/pacman.d/fbpmirrors" >> "${pkgdir}/etc/pacman.conf"
+    echo "" >> "${pkgdir}/etc/pacman.conf"
+    echo "[fbpos-drivers]" >> "${pkgdir}/etc/pacman.conf"
+    echo "SigLevel = Optional TrustAll" >> "${pkgdir}/etc/pacman.conf"
+    echo "Include = /etc/pacman.d/fbpmirrors" >> "${pkgdir}/etc/pacman.conf"
+    echo "" >> "${pkgdir}/etc/pacman.conf"
+    echo "[fbpos-dt]" >> "${pkgdir}/etc/pacman.conf"
+    echo "SigLevel = Optional TrustAll" >> "${pkgdir}/etc/pacman.conf"
+    echo "Include = /etc/pacman.d/fbpmirrors" >> "${pkgdir}/etc/pacman.conf"
+
+}
