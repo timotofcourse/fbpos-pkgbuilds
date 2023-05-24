@@ -1,9 +1,0 @@
-#!/usr/bin/bash
-
-pre_install() {
-    pip install pyside2
-    sleep 25
-    pip install python-pacman
-}
-
-

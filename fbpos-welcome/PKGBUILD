@@ -18,7 +18,7 @@ options=()
 install=python-modules
 source=("$pkgname.zip")
 noextract=()
-sha256sums=('4c3997127f57a815c0e79506170378823717930622e169475dccc0a061dc8895')
+sha256sums=('eecfe82c6ea59531a82afefbb8a1c5071ef58803f86ad0550d8bf7479fdb2011')
 
 package() {
 	install -Dm 755 "$srcdir/$pkgname.py" "$pkgdir/usr/bin/$pkgname"
