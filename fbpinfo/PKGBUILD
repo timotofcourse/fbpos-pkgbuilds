@@ -17,7 +17,7 @@ backup=()
 options=()
 source=("https://github.com/FilmaBem2/fbpinfo/archive/refs/heads/master.zip")
 noextract=()
-sha256sums=('4b0d9731fedf1dc4faf8aa494e8c1f373bcdc8e1ab7004a0f3a508b74e92730b')
+sha256sums=('cd4625527eb68516d65509e37d19c127f466951172588798bc8799cf06099bf5')
 
 package() {
 	cd "fbpinfo-master"
