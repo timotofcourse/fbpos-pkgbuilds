@@ -19,15 +19,11 @@ replaces=()
 backup=()
 options=()
 changelog=
-source=(fbpmirrors)
+source=(fbpmirrors.zip)
 noextract=()
-sha256sums=('152a06dcc6f05b134081f08d99704159566bec6e078517c57e819f20fa6331ec')
+sha256sums=('a8fdf50824201ed811bf126f94770692c18cf22e8945b16c864dee39a702bc4c')
 validpgpkeys=()
 
-pkgver() {
-	cd "${_pkgname}"
-    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}
 
 package() {
     mkdir "${pkgdir}/etc"
