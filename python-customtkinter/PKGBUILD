@@ -1,0 +1,40 @@
+pkgname=python-customtkinter
+_pkgver=$(curl -s "https://pypi.org/pypi/customtkinter/json" | jq -r '.info.version')
+pkgver=$_pkgver
+pkgrel=1
+pkgdesc="A ,pderm amd customizable python UI-library based on Tkinter"
+arch=('any')
+url="https://github.com/TomSchimansky/CustomTkinter"
+license=('MIT')
+makedepends=('jq'
+             
+             'python-build'
+             'python-setuptools'
+             'python-installer'
+             'python-flit-core'
+             'python-pretend'
+             'python-pytest')
+depends=(
+         'python'
+         'tk'
+         'python-darkdetect')
+source=("https://files.pythonhosted.org/packages/source/c/customtkinter/customtkinter-$_pkgver.tar.gz")
+sha256sums=('69a22f3ecfb6d481b566e2125acc8286f55e60c4fdc29990a4a4550250942380')
+
+pkgver_arch=$(python -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')")
+pkgdir="/usr/lib/python$pkgver_arch/site-packages"
+
+prepare() {
+    tar xf "customtkinter-$_pkgver.tar.gz"
+    cd "$srcdir/customtkinter-$_pkgver/"
+    }
+
+build() {
+    cd "$srcdir/customtkinter-$_pkgver/"
+    python -m build --wheel --no-isolation
+}
+
+package() {
+    cd "$srcdir/customtkinter-$_pkgver/"
+    python -m installer --destdir="$pkgdir" dist/*.whl
+}
