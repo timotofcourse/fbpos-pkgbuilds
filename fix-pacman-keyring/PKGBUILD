@@ -1,0 +1,25 @@
+# Maintainer: Filma Bem <filmabemtv2@gmail.com>
+pkgname=fix-pacman-keyring
+pkgver=23.0
+pkgrel=1
+pkgdesc="This package provides a script to fix pacman keyring for users that don't update that often. Run 'fix-pacman-keyring' to fix the pacman keyring"
+arch=('x86_64')
+url=""
+license=('MIT')
+groups=()
+depends=('pacman', 'sudo')
+makedepends=('git')
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+changelog=
+source=(source=("git+$url"))
+sha256sums=('4e4b7b3dfe8027d0510e059a1bd0a1e909d5cefa31c2ff1205cf05ccacd922ea')
+
+package() {
+	install -Dm 755 "fix-pacman-keyring.sh" "${pkgdir}/usr/bin/fix-pacman-keyring"
+}
