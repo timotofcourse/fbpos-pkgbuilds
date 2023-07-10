@@ -13,8 +13,7 @@ conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
 source=(source=("git+$url"))
-sha256sums=('SKIP'
-            'b0eafd0c69375881321523183e084facfd6738c7bb91bf29f5805c503a17faae')
+sha256sums=('SKIP')
 pkgver() {
     printf "1.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
