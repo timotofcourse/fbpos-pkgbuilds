@@ -1,25 +1,25 @@
 # Maintainer: Filma Bem <filmabemtv2@gmail.com>
 pkgname=fbpos-calamares-config
-alci=alci-calamares-config-pure
 _destname1="/etc"
-pkgver=23.0
-pkgrel=7
-pkgdesc="calamares for FBP OS"
+pkgver=23.1
+pkgrel=1
+pkgdesc="calamares settings for FBP OS"
 arch=('any')
-url="https://github.com/arch-linux-calamares-installer"
+url="https://github.com/FilmaBem2/fbpos-calamares-settings"
 license=('GPL3')
 makedepends=('git')
-depends=('fbpos-desktop')
-conflicts=('alci-calamares-config' 'alci-calamares-config-dev')
+depends=('calamares')
+conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
-source=(${alci}::"git+${url}/${alci}"
-		fbpos.tar.gz)
+source=(source=("git+$url"))
 sha256sums=('SKIP'
             'b0eafd0c69375881321523183e084facfd6738c7bb91bf29f5805c503a17faae')
+pkgver() {
+    printf "1.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
 package() {
 	install -dm755 ${pkgdir}${_destname1}
-	cp -r ${srcdir}/${alci}${_destname1}/* ${pkgdir}${_destname1}
-	cp -r ${srcdir}/branding/ ${pkgdir}/etc/calamares/
-	cp -r ${srcdir}/settings.conf ${pkgdir}/etc/calamares/settings.conf
+	cp -r ${srcdir}/${pkgname}${_destname1}/* ${pkgdir}${_destname1}
 }
