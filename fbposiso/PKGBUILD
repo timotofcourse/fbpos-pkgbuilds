@@ -1,0 +1,31 @@
+# Maintainer: Filma Bem <filmabemtv2@gmail.com>
+pkgname=fbposiso
+pkgver=23.0
+pkgrel=1
+pkgdesc="Tool to make an FBP OS iso from the templates"
+arch=('x86_64')
+url=""
+license=('GPL3')
+groups=()
+depends=('arch-install-scripts', 'awk', 'dosfstools', 'e2fsprogs', 'findutils', 'grub', 'gzip', 'libarchive', 'libisoburn', 'mtools', 'openssl', 'pacman', 'sed', 'squashfs-tools', 'archiso')
+makedepends=('git')
+checkdepends=()
+optdepends=('erofs-utils')
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+changelog=
+source=(source=("git+$url"))
+sha256sums=('4e4b7b3dfe8027d0510e059a1bd0a1e909d5cefa31c2ff1205cf05ccacd922ea')
+
+package() {
+	install -Dm 755 "${srcdir}/configs/plasma" "${pkgdir}/usr/share/fbposiso/configs/"
+	install -Dm 755 "${srcdir}/configs/plasma-full" "${pkgdir}/usr/share/fbposiso/configs/"
+	install -Dm 755 "${srcdir}/configs/cinnamon" "${pkgdir}/usr/share/fbposiso/configs/"
+	install -Dm 755 "${srcdir}/configs/cinnamon-full" "${pkgdir}/usr/share/fbposiso/configs/"
+	install -Dm 755 "${srcdir}/configs/xfce" "${pkgdir}/usr/share/fbposiso/configs/"
+	install -Dm 755 "${srcdir}/configs/xfce-full" "${pkgdir}/usr/share/fbposiso/configs/"
+	install -Dm 755 "${srcdir}/fbposiso/mkfbposiso" "${pkgdir}/usr/bin/mkfbposiso"
+}
