@@ -1,0 +1,21 @@
+#!/bin/bash
+
+## Set System Themes
+
+THEME='Snow'
+ICONS='Reversal-purple-dark'
+FONT='Noto Sans 11'
+CURSOR='Bibata_Spirit'
+KDETHEME='Mega-Plasma'
+
+SCHEMA='gsettings set org.gnome.desktop.interface'
+
+
+apply_themes() {
+	${SCHEMA} gtk-theme "$THEME"
+	${SCHEMA} icon-theme "$ICONS"
+	${SCHEMA} cursor-theme "$CURSOR"
+	${SCHEMA} font-name "$FONT"
+}
+
+apply_themes

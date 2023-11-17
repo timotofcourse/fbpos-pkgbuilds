@@ -1,7 +1,7 @@
 # Maintainer: Filma Bem <filmabemtv2@gmail.com>
 
 pkgname=fbpos-themes
-pkgver=23.0
+pkgver=24.1
 pkgrel=1
 pkgdesc="Meta Package to install FBP OS Themes"
 arch=('x86_64')

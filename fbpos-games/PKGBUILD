@@ -1,7 +1,7 @@
 # Maintainer: Filma Bem <filmabemtv2@gmail.com>
 
 pkgname=fbpos-games
-pkgver=23.0
+pkgver=24.1
 pkgrel=1
 pkgdesc="Meta Package to install some game launchers"
 arch=('x86_64')

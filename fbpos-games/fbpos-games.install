@@ -4,7 +4,7 @@ post_install() {
 	flatpak install flathub com.heroicgameslauncher.hgl -y
 	flatpak install flathub net.lutris.Lutris -y
 	flatpak install flathub net.davidotek.pupgui2 -y
-	flatpak install flathub net.brinkervii.grapejuice -y
+	flatpak install flathub io.github.vinegarhq.Vinegar -y
 	echo "Packages Installed"
 }
 

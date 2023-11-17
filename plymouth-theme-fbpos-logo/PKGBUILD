@@ -1,7 +1,7 @@
 # Maintainer: Filma Bem <filmabemtv2@gmail.com>
 
 pkgname=plymouth-theme-fbpos-logo
-pkgver=23.0
+pkgver=24.1
 pkgrel=1
 pkgdesc='A remake of the ubuntu-logo Plymouth theme, based on the debian-logo theme, but featuring the FBP OS logo.'
 arch=('any')

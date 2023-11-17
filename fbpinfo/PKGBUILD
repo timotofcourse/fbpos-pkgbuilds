@@ -1,6 +1,7 @@
 # Maintainer: Your Name <filmabemtv2@gmail.com>
+
 pkgname=fbpinfo
-pkgver=22.11
+pkgver=24.1
 pkgrel=1
 pkgdesc="A Simple fork from pfetch still work in progress to be shipped with FBP OS"
 arch=('x86_64')

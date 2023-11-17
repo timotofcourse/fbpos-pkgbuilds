@@ -1,4 +1,5 @@
 # Maintainer: Filma Bem <filmabemtv2@gmail.com>
+
 pkgname=fbposiso
 pkgver=23.0
 pkgrel=1
@@ -28,4 +29,5 @@ package() {
 	install -Dm 755 "${srcdir}/configs/xfce" "${pkgdir}/usr/share/fbposiso/configs/"
 	install -Dm 755 "${srcdir}/configs/xfce-full" "${pkgdir}/usr/share/fbposiso/configs/"
 	install -Dm 755 "${srcdir}/fbposiso/mkfbposiso" "${pkgdir}/usr/bin/mkfbposiso"
+	install -Dm 755 "${srcdir}/configs/hyprland" "${pkgdir}/usr/share/fbposiso/configs/"
 }

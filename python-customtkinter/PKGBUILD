@@ -19,7 +19,7 @@ depends=(
          'tk'
          'python-darkdetect')
 source=("https://files.pythonhosted.org/packages/source/c/customtkinter/customtkinter-$_pkgver.tar.gz")
-sha256sums=('69a22f3ecfb6d481b566e2125acc8286f55e60c4fdc29990a4a4550250942380')
+sha256sums=('eddc1c416063e1ce1aa2793959b0814e95e22d3de3f2a940bd84828f7301f555')
 
 pkgver_arch=$(python -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')")
 pkgdir="/usr/lib/python$pkgver_arch/site-packages"

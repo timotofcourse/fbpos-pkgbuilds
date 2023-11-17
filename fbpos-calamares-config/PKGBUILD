@@ -1,9 +1,10 @@
 # Maintainer: Filma Bem <filmabemtv2@gmail.com>
+
 pkgname=fbpos-calamares-config
 _destname1="/etc"
-pkgver=23.1
+pkgver=24.1
 pkgrel=1
-pkgdesc="calamares settings for FBP OS"
+pkgdesc="calamares settings for FBP OS Instalation"
 arch=('any')
 url="https://github.com/FilmaBem2/fbpos-calamares-settings"
 license=('GPL3')

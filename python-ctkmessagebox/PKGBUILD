@@ -1,0 +1,41 @@
+pkgname=python-ctkmessagebox
+_pkgver=2.5
+pkgver=$_pkgver
+pkgrel=1
+pkgdesc="A modern and fully customizable messagebox for CustomTkinter, A must-have extension pack!"
+arch=('any')
+url="https://github.com/Akascape/CTkMessagebox"
+license=('MIT')
+makedepends=('jq'
+             
+             'python-build'
+             'python-setuptools'
+             'python-installer'
+             'python-flit-core'
+             'python-pretend'
+             'python-pytest')
+depends=(
+         'python'
+         'tk'
+         'python-darkdetect'
+         'python-customtkinter')
+source=("https://files.pythonhosted.org/packages/36/4c/5430dac576c00f48e8ff5e8f39632783eb27678494853ecd3939c54dc097/CTkMessagebox-$_pkgver.tar.gz")
+sha256sums=('155c20e6ce0a1fd6ba43079db43e7f7bc124018f58141a15c993668aef6dae14')
+
+pkgver_arch=$(python -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')")
+pkgdir="/usr/lib/python$pkgver_arch/site-packages"
+
+prepare() {
+    tar xf "CTkMessagebox-$_pkgver.tar.gz"
+    cd "$srcdir/CTkMessagebox-$_pkgver/"
+    }
+
+build() {
+    cd "$srcdir/CTkMessagebox-$_pkgver/"
+    python -m build --wheel --no-isolation
+}
+
+package() {
+    cd "$srcdir/CTkMessagebox-$_pkgver/"
+    python -m installer --destdir="$pkgdir" dist/*.whl
+}

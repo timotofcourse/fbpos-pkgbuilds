@@ -1,9 +1,9 @@
 # Maintainer: Filma Bem <filmabemtv2@gmail.com>
 pkgname=fbpos-defaults
-pkgver=23.1.1
+pkgver=24.1
 pkgrel=1
 epoch=
-pkgdesc="FBP OS Default Settings"
+pkgdesc="FBP OS Default Settings for desktop environments"
 packager=('Filma Bem <filmabemtv2@gmail.com>')
 arch=('x86_64')
 url="https://github.com/FilmaBem2/fbpos-wallpapers"
@@ -68,5 +68,7 @@ package() {
     cp -R "${srcdir}/kwinrc" "${pkgdir}/root/.config/kdedefaults/"
     cp -R "${srcdir}/plasmarc" "${pkgdir}/root/.config/"
     cp -R "${srcdir}/plasmarc" "${pkgdir}/root/.config/kdedefaults/"
+    cp -R "${srcdir}/hyprland/*" "${pkgdir}/etc/skel/.config/"
+    cp -R "${srcdir}/hyprland/*" "${pkgdir}/root/.config/"
 
 }

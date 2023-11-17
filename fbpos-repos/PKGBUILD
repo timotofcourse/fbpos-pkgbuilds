@@ -1,9 +1,9 @@
 # Maintainer: Filma Bem <filmabemtv2@gmail.com>
 pkgname=fbpos-repos
-pkgver=23.0.0
+pkgver=24.1
 pkgrel=1
 epoch=
-pkgdesc="FBP OS Repositories"
+pkgdesc="FBP OS Repository list"
 packager=('Filma Bem <filmabemtv2@gmail.com>')
 arch=('x86_64')
 url="https://github.com/FilmaBem2/fbpos-repos"

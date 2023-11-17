@@ -1,8 +1,8 @@
 # Maintainer: Filma Bem <filmabemtv2@gmail.com>
 pkgname=fbpos-desktop
-pkgver=22.10.12
+pkgver=24.1
 pkgrel=1
-pkgdesc="Add FBP OS Logo to the system info and add some files to binary folder. Also make sure to nothing basic is missing"
+pkgdesc="Add FBP OS Logo to the system info and add some files to binary folder. Also make sure to nothing basic is missing and some other common things"
 arch=('x86_64')
 url=""
 license=('MIT')

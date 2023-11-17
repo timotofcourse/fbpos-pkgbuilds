@@ -1,0 +1,22 @@
+# Maintainer: Erik Dubois <erik.dubois@gmail.com>
+# Packager: Filma Bem <filmabemtv2@gmail.com>
+
+pkgname=calamares-settings
+_destname1="/etc"
+pkgver=23.10
+pkgrel=01
+pkgdesc="calamares for FBP OS"
+arch=('any')
+url="https://github.com/arch-linux-calamares-installer"
+license=('GPL3')
+makedepends=('git')
+depends=()
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${pkgname}::"git+${url}/${pkgname}")
+sha256sums=('SKIP')
+package() {
+	install -dm755 ${pkgdir}${_destname1}
+	cp -r ${srcdir}/${pkgname}${_destname1}/* ${pkgdir}${_destname1}
+}
